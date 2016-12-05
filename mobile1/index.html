@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<script src="js/zepto.min.js" type="application/javascript"></script>
+	<script src="js/touch.js" type="application/javascript"></script>
+    <title></title>
+    <style>
+    	#dom{
+    		width: 100px;
+    		height: 100px;
+    		background: palegreen;
+    		margin: 100px auto;
+    	}
+    	#box{
+    		width: 100px;
+    		height: 100px;
+    		background: palegoldenrod;
+    		margin: 100px auto;
+    	}
+    </style>
+</head>
+<body>	
+	<div id="dom"></div>
+	<div id="box"></div>
+	<div id="text"></div>
+	<div 
+</body>
+<script type="text/javascript">
+    	var angle = 0;
+    	touch.on( '#dom', 'touchstart', function(ev){
+    		ev.startRotate();
+    		ev.preventDefault();
+    	} );
+    	touch.on( '#dom','rotate', function(ev){ 
+    		var totalAngle = angle + ev.rotation;
+    		this.style.webkitTransform = 'rotate('+ totalAngle +'deg)';
+    		this.style.background = "red";
+    	} );
+    $(function(){
+    	var target = document.getElementById("box");
+    	target.style.webkitTransition = 'all ease 1s';
+    	touch.on( '#box', 'touchstart', function(ev){
+    		ev.preventDefault();
+    	} );
+    	var initialScale = 1;
+    	var currentScale;
+    	touch.on( '#box', 'pinchend', function(ev){ 
+    		currentScale = ev.scale - 1;
+    		currentScale = initialScale + currentScale;
+    		currentScale = currentScale > 5 ? 5 : currentScale;//自己调节可以放大的最大倍数
+    		currentScale = currentScale < 0.1 ? 0.1 : currentScale;//自己调节可以缩小的最小倍数
+    		this.style.webkitTransform = 'scale( '+ currentScale +' )';
+    		$('#text').text('当前缩放比例为：'+ currentScale +'倍');
+    		initialScale = currentScale;
+    	} );
+	
+   		})	
+    </script>
+</html> 

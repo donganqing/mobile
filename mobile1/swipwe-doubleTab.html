@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>双击屏幕，图片放大</title>
+		<script src="http://cdn.bootcss.com/Swiper/3.4.0/js/swiper.jquery.js" type="application/javascript"></script>
+		<script src="http://cdn.bootcss.com/Swiper/3.4.0/css/swiper.min.css" type="application/javascript"></script>
+		<link href="http://cdn.bootcss.com/Swiper/3.4.0/css/swiper.css" type="text/css" rel="stylesheet">
+		<style>
+			/*.swiper-container{
+				width: 100%;
+				height: 100px;
+			}*/
+			/*.swiper-slide{
+				width: 30%;
+				height: 100px;
+				float: left;
+			}*/
+			/*img{
+				width: 30%;
+				height: 100%;
+			}*/
+		</style>
+	</head>
+	<body>
+<div class="swiper-container" style="height:300px;">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide">
+			<div class="swiper-zoom-container">
+				<img src="img/01.jpg" /></div>
+		</div>
+		<div class="swiper-slide">
+			<div class="swiper-zoom-container">
+				<img src="img/02.jpg" /></div>
+		</div>
+		<div class="swiper-slide">
+			<div class="swiper-zoom-container">
+				<img src="img/03.jpg" /></div>
+		</div>
+	</div>
+</div>
+
+	</body>
+	<script language="javascript"> 
+		var mySwiper = new Swiper('.swiper-container',{
+		zoom : true,
+		})
+</script>
+</html>

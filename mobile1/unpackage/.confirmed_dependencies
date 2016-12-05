@@ -1,0 +1,19 @@
+{
+  "index.html": {
+    "resources": [
+      "js/touch.js",
+      "js/zepto.min.js"
+    ],
+    "refer": []
+  },
+  "swiper.html": {
+    "resources": [
+      "img/03.jpg",
+      "img/02.jpg",
+      "img/04.jpg",
+      "css/swiper.min.css",
+      "js/swiper.min.js",
+      "img/01.jpg"
+    ]
+  }
+}
